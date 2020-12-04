@@ -33,10 +33,10 @@
 #include "songsfoldertreeitem.h"
 #include "../song/songfoldertreeitem.h"
 #include "../song/songfileitem.h"
-#include "quazip.h"
-#include "quazipdir.h"
-#include "quazipfile.h"
-#include "quazipfileinfo.h"
+#include "quazip/quazip.h"
+#include "quazip/quazipdir.h"
+#include "quazip/quazipfile.h"
+#include "quazip/quazipfileinfo.h"
 
 #include <QMessageBox>
 #include <QProgressDialog>

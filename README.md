@@ -6,46 +6,11 @@
 
 # Getting Started
 
-## Building in MacOS X
-
-### Initial Setup
-You will need the latest version of qt to build the BeatBuddy Manager. You can get it from homebrew using `brew install qt`. Make sure to follow all instructions, as there may be issues with symlink creation that require you to add the binary directory to your path manually.
-
-Ideally, set up Qt Creator and configure it to work with your installation of Qt. This will allow you to run the project from the IDE without any further work.
-
-If yo decide not to set up Qt Creator, you will need to provide suitable binaries of libquazip and libminIni to be loaded dynamically.
-
-### Building and Deploying
-
-The deployment script has been temporarily decomissioned; we will bring it back soon. In order to distribute the app you need to make sure to build it and include the libraries in the bundle, making sure they point at the included dependencies as needed.
-
-## Setting Up in Windows
-
-### Setting Up Qt
-To build BBMnager you'll need Qt 5.12.4 or up.
-To obtain Qt, download the installer from [their official site](https://www.qt.io/download-qt-installer) and install. This includes Qt and its IDE, Qt Creator.
-
-#### Setting your build kit
-To successfully run BBManager, you'll need `Desktop Qt 5.12.4 MSVC2015 64bit` as your kit selection; this can be found on the Kits menu which you can find by navigating through the menu bar: Tools->Options->Kits.
-
-Make sure the selected kit's compilers for both C and C++ are `Microsoft Visual C++ Compiler 14.0 (amd64)`. If they are missing from the drop down options, you may download them through Microsoft Visual Studio's installer.
-
-##### Setting Microsoft Visual C++ Compiler
-Get Microsoft Visual Studio's Installer from [their official site](https://visualstudio.microsoft.com/downloads/) and execute it. On the installer, when prompted, select Desktop development with C++, and make sure the installation includes all the MSVC optionals. This should automatically add the desired compiler to Qt's kit's compilers' dropdowns.
-
-You may also add the compiler manually (in the same Options->Kits window); setting its path to `C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\cdb.exe`, setting the make path to `C:\Qt\Tools\QtCreator\bin` selecting the jom.exe file, and the qt mkspecs to `C:\Qt\Tools\msvc2015_64\mkspecs`. 
-
-Finally make sure your `C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\amd64` folder has a rc.exe and a rcdll.dll files, if they don't exists copy them from `C:\Program Files (x86)\Windows Kits\10\bin\VERSION\x64`.
-
-### Building and Deploying
-The project file is `BBManagerLean/BBManagerLean.pro`. When opening the project select the corresponding kit, Clean, Build, and Run.
-
-To pack for deployment - ie: to share with other people make the .pro file is set for release, and set the Build(The computer above the Run button on the Qt Creator) to 'Release' and build the application. Go to the folder containing the .exe and delete all but the .exe file, open the command prompt and run `windeployqt.exe --quick .` this will generate all the necessary .dll, and it is ready.
-
-
 ## Building for Ubuntu
 
-Build currently only performed on Ubuntu 18.04.
+This branch was modified from SingularSound in order to build on Ubuntu 20.04.1 LTS.  libquazip is known as libquazip5 there.  I extracted the libquazip header files into the src tree.  I'm not a c++ programmer/linker. 
+
+legacy Build steps for Ubuntu 18.04:
 
 ### Pre-requisites
 
@@ -86,6 +51,46 @@ And then build:
     make clean && make all
 
 It will produce the `BBManagerLean/BBManagerLean`.
+
+
+
+
+## Building in MacOS X
+
+### Initial Setup
+You will need the latest version of qt to build the BeatBuddy Manager. You can get it from homebrew using `brew install qt`. Make sure to follow all instructions, as there may be issues with symlink creation that require you to add the binary directory to your path manually.
+
+Ideally, set up Qt Creator and configure it to work with your installation of Qt. This will allow you to run the project from the IDE without any further work.
+
+If yo decide not to set up Qt Creator, you will need to provide suitable binaries of libquazip and libminIni to be loaded dynamically.
+
+### Building and Deploying
+
+The deployment script has been temporarily decomissioned; we will bring it back soon. In order to distribute the app you need to make sure to build it and include the libraries in the bundle, making sure they point at the included dependencies as needed.
+
+## Setting Up in Windows
+
+### Setting Up Qt
+To build BBMnager you'll need Qt 5.12.4 or up.
+To obtain Qt, download the installer from [their official site](https://www.qt.io/download-qt-installer) and install. This includes Qt and its IDE, Qt Creator.
+
+#### Setting your build kit
+To successfully run BBManager, you'll need `Desktop Qt 5.12.4 MSVC2015 64bit` as your kit selection; this can be found on the Kits menu which you can find by navigating through the menu bar: Tools->Options->Kits.
+
+Make sure the selected kit's compilers for both C and C++ are `Microsoft Visual C++ Compiler 14.0 (amd64)`. If they are missing from the drop down options, you may download them through Microsoft Visual Studio's installer.
+
+##### Setting Microsoft Visual C++ Compiler
+Get Microsoft Visual Studio's Installer from [their official site](https://visualstudio.microsoft.com/downloads/) and execute it. On the installer, when prompted, select Desktop development with C++, and make sure the installation includes all the MSVC optionals. This should automatically add the desired compiler to Qt's kit's compilers' dropdowns.
+
+You may also add the compiler manually (in the same Options->Kits window); setting its path to `C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\cdb.exe`, setting the make path to `C:\Qt\Tools\QtCreator\bin` selecting the jom.exe file, and the qt mkspecs to `C:\Qt\Tools\msvc2015_64\mkspecs`. 
+
+Finally make sure your `C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\amd64` folder has a rc.exe and a rcdll.dll files, if they don't exists copy them from `C:\Program Files (x86)\Windows Kits\10\bin\VERSION\x64`.
+
+### Building and Deploying
+The project file is `BBManagerLean/BBManagerLean.pro`. When opening the project select the corresponding kit, Clean, Build, and Run.
+
+To pack for deployment - ie: to share with other people make the .pro file is set for release, and set the Build(The computer above the Run button on the Qt Creator) to 'Release' and build the application. Go to the folder containing the .exe and delete all but the .exe file, open the command prompt and run `windeployqt.exe --quick .` this will generate all the necessary .dll, and it is ready.
+
 
 
 ## Default Files

@@ -26,8 +26,8 @@
 #include "../../beatsmodelfiles.h"
 #include "portablesongfile.h"
 
-#include "quazip.h"
-#include "quazipfile.h"
+#include "quazip/quazip.h"
+#include "quazip/quazipfile.h"
 
 #include <QDebug>
 #include <QDir>

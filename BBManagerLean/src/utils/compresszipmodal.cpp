@@ -13,8 +13,8 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 #include "compresszipmodal.h"
-#include "quazip.h"
-#include "quazipfile.h"
+#include "quazip/quazip.h"
+#include "quazip/quazipfile.h"
 
 CompressZipModal::CompressZipModal(const QString &destZipPath, const QString &sourcePath, const QStringList &sourceFiles, QWidget *p_parent) :
    QObject(nullptr)

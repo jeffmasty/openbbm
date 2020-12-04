@@ -21,9 +21,9 @@
 #include "../../beatsmodelfiles.h"
 #include "../song/portablesongfile.h"
 
-#include "quazip.h"
-#include "quazipfile.h"
-#include "quazipdir.h"
+#include "quazip/quazip.h"
+#include "quazip/quazipfile.h"
+#include "quazip/quazipdir.h"
 
 #include <QDir>
 #include <QUuid>

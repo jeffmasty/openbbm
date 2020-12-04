@@ -31,9 +31,9 @@
 #include "../../beatsmodelfiles.h"
 #include "portablesongfile.h"
 
-#include "quazip.h"
-#include "quazipfile.h"
-#include "quazipdir.h"
+#include "quazip/quazip.h"
+#include "quazip/quazipfile.h"
+#include "quazip/quazipdir.h"
 
 SongFolderTreeItem::SongFolderTreeItem(BeatsProjectModel *p_Model, SongsFolderTreeItem *parent):
    ContentFolderTreeItem(p_Model, parent)

@@ -1,0 +1,18 @@
+extract downloaded quazip into BBManagerLean/src/quazip
+
+	modified:   BBManagerLean.pro  --> quazip5
+	modified:   src/mainwindow.cpp  --> "quazip/quazip.h"...
+	modified:   src/model/tree/project/beatsprojectmodel.cpp
+	modified:   src/model/tree/project/songsfoldertreeitem.cpp
+	modified:   src/model/tree/song/songfileitem.cpp
+	modified:   src/model/tree/song/songfoldertreeitem.cpp
+	modified:   src/utils/compresszipmodal.cpp
+	modified:   src/utils/extractzipmodal.cpp
+
+
+because:
+/usr/bin/ld: cannot find -lquazip
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [Makefile:800: BBManagerLean] Error 1
+make[1]: Leaving directory '/home/judah/git/openbbm/BBManagerLean'
+make: *** [Makefile:51: sub-BBManagerLean-all] Error 2

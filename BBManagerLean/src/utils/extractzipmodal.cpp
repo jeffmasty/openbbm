@@ -13,8 +13,8 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 #include "extractzipmodal.h"
-#include "quazip.h"
-#include "quazipfile.h"
+#include "quazip/quazip.h"
+#include "quazip/quazipfile.h"
 #include "../platform/platform.h"
 #include <QObject>
 
